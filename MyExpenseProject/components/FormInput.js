@@ -7,13 +7,13 @@ const FormInput = ({iconType,labelValue,placeholderText,...rest}) => {
   return (
     <View style={styles.container}>
           <View style={styles.iconContainer}>
-              <AntIcon name={iconType} size={25} color={'#eee'} />
+              <AntIcon name={iconType} size={25} color={'#666'} />
           </View>  
           <TextInput
            value={labelValue}
            placeholder={placeholderText}
            numberOfLines={1}
-           placeholderTextColor={'#eee'}
+           placeholderTextColor={'#666'}
            style={styles.input}
            {...rest}
           />
