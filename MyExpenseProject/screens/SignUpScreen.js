@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Image,
   Platform,
-  StyleSheet
+  StyleSheet,
+  KeyboardAvoidingView
 } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
@@ -23,6 +24,10 @@ const SignUpScreen = ({navigation}) => {
 
 
   return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
     <View style={styles.container}>
       <Text style={styles.text}>Create an account</Text>
 
@@ -98,6 +103,7 @@ const SignUpScreen = ({navigation}) => {
         <Text style={styles.navButtonText}>Have an account? Sign In</Text>
       </TouchableOpacity>
     </View>
+   </KeyboardAvoidingView>
   );
 };
 
