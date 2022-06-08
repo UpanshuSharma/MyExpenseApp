@@ -10,6 +10,7 @@ import {
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
+import { AuthContext } from '../navigation/AuthenticationProvider';
 
 
 
@@ -18,7 +19,8 @@ const SignUpScreen = ({navigation}) => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  // const {register} = useContext(AuthContext);
+  const {register} = useContext(AuthContext)
+
 
   return (
     <View style={styles.container}>
@@ -52,7 +54,7 @@ const SignUpScreen = ({navigation}) => {
 
       <FormButton
         title="Sign Up"
-        //onPress={() => register(email, password)}
+        onPress={() => register(email, password)}
       />
 
       <View style={styles.textPrivate}>

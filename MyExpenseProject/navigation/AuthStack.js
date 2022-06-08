@@ -2,7 +2,7 @@ import {  View } from 'react-native'
 import React from 'react'
 
 /* Import navigation & stack-navigation */
-import { NavigationContainer } from '@react-navigation/native';
+
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
@@ -15,7 +15,7 @@ import SignUpScreen from '../screens/SignUpScreen';
 
 const AuthStack = () => {
   return (
-    <NavigationContainer>
+   
         <Stack.Navigator
         // screenOptions={
         //  { 
@@ -57,7 +57,7 @@ const AuthStack = () => {
                 })}
                 /> 
         </Stack.Navigator>
-   </NavigationContainer>
+   
   )
 }
 
