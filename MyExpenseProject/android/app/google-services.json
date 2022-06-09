@@ -9,10 +9,18 @@
       "client_info": {
         "mobilesdk_app_id": "1:284120526752:android:376cfea98cddae0116bec5",
         "android_client_info": {
-          "package_name": "com.myexpenseproject"
+          "package_name": "com.sharma.myexpense"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "284120526752-376np6ma686u1p2t9vl6tms20cb7atok.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sharma.myexpense",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
         {
           "client_id": "284120526752-m1js62nq5v1h25tbm7t5mt5vkeafqfgv.apps.googleusercontent.com",
           "client_type": 3

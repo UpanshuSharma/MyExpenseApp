@@ -6,7 +6,8 @@ import {
   Image,
   Platform,
   StyleSheet,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+
 } from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
@@ -20,14 +21,16 @@ const SignUpScreen = ({navigation}) => {
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
 
-  const {register} = useContext(AuthContext)
+  const {register,googleLogin} = useContext(AuthContext)
 
 
   return (
+    
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
+      style={styles.keyboardView}
     >
+
     <View style={styles.container}>
       <Text style={styles.text}>Create an account</Text>
 
@@ -92,7 +95,7 @@ const SignUpScreen = ({navigation}) => {
         btnType="google"
         btnColor="#de4d41"
         backgroundColor="#f5e7ea"
-        // onPress={() => googleLogin()}
+       onPress={() => googleLogin()}
       />
         </View>
       ) : null}
@@ -103,13 +106,17 @@ const SignUpScreen = ({navigation}) => {
         <Text style={styles.navButtonText}>Have an account? Sign In</Text>
       </TouchableOpacity>
     </View>
-   </KeyboardAvoidingView>
+  </KeyboardAvoidingView>
+ 
   );
 };
 
 export default SignUpScreen;
 
 const styles = StyleSheet.create({
+  keyboardView:{
+    flex:1,
+  },
   container: {
     backgroundColor: '#f9fafd',
     flex: 1,
