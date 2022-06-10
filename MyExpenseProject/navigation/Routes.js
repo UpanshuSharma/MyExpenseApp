@@ -3,9 +3,8 @@ import React,{useContext,useState,useEffect} from 'react'
 import { AuthContext } from './AuthenticationProvider'
 import AuthStack from './AuthStack'
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from '../screens/HomeScreen';
 import auth from '@react-native-firebase/auth';
-
+import AppStack from './AppStack';
 const Routes = () => {
 
   const {user,setUser}=useContext(AuthContext);
@@ -31,7 +30,7 @@ const Routes = () => {
 
   return (
     <NavigationContainer>
-             {user ? <HomeScreen/> : <AuthStack />}
+             {user ? <AppStack/> : <AuthStack />}
    </NavigationContainer>
   )
 }
