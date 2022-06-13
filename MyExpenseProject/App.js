@@ -1,9 +1,14 @@
 import React from 'react'
 import Main from './navigation/Main';
 
+import { Provider as PaperProvider } from 'react-native-paper';
+
 const App = () => {
   return (
-    <Main/>
+    
+    <PaperProvider>
+        <Main/>
+    </PaperProvider>
   )
 }
 
