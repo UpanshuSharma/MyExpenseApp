@@ -1,17 +1,16 @@
 import { View, Text, StyleSheet,Image} from 'react-native'
 import React from 'react'
-import {Avatar, Button, Menu, Divider, Provider} from 'react-native-paper';
+import {Avatar} from 'react-native-paper';
+
+
+// import MenuComponent from './MenuComponent';
 
 const CustomHeader = ({title}) => {
 
-  const [visible, setVisible] = React.useState(false);
-
-  const openMenu = () => setVisible(true);
-
-  const closeMenu = () => setVisible(false);
-
   return (
+
     <View style={styles.container}>
+
            <View style={styles.main_container}>
                <Image   style={styles.logo} resizeMode='stretch' source={require('../assets/MyExpense1.png')}/>
                <Text style={styles.text}>MyExpense</Text>
@@ -19,6 +18,7 @@ const CustomHeader = ({title}) => {
            <View style={styles.profile_container}>
                             <Avatar.Text size={34} label="UN" />
                             <Text style={styles.username}>UserName</Text>
+                                   
            </View>
           
     </View>
