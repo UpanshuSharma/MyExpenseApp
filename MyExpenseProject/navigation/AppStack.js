@@ -12,7 +12,8 @@ import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icons from 'react-native-vector-icons/FontAwesome5';
-import HomeScreen from '../modules/home module/HomeScreen';
+// import HomeScreen from '../modules/home module/HomeScreen';
+import HomeStack from './HomeStack';
 import MyAccountScreen from '../modules/my account module/MyAccountScreen';
 import AnalysisScreen from '../modules/Analysis module/AnalysisScreen';
 import ExpenseScreen from '../modules/Expense module/ExpenseScreen';
@@ -24,10 +25,15 @@ const AppStack = () => {
       initialRouteName="Home"
       activeColor="white"
       barStyle={{ backgroundColor: 'pink' }}
+      // screenOptions={(route)=>{
+      //   return {
+      //     headerShown: route.name!=='AddExpense',
+      //   }
+      // }}
     >
                 <Tab.Screen
                      name="Home"
-                     component={HomeScreen}
+                     component={HomeStack}
                      options={{
                         tabBarLabel: 'Home', 
                         tabBarColor: '#57746a',
