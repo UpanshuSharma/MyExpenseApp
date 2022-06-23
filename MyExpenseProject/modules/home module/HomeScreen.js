@@ -1,12 +1,22 @@
 import { View, StyleSheet,TouchableOpacity,Text } from 'react-native';
 import React,{useState} from 'react';
 import {Agenda} from 'react-native-calendars'
-import { Card,Avatar,Button,FAB} from 'react-native-paper';
+import { Card,Avatar,Button,FAB,Portal} from 'react-native-paper';
 
 import date from '../../utils/DateTime';
 
+
+
 const HomeSreen = ({navigation}) => {
- 
+
+
+/*......................*/
+  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState({ open });
+  const { open } = state;
+/* ------------------------- */
+
+
     let obj={
       '2022-06-20':[{
         name:'abc',
@@ -99,12 +109,42 @@ const HomeSreen = ({navigation}) => {
                   futureScrollRange={1}
               />
 
-              <FAB
+             {/** <FAB
                   icon="plus"
                   style={styles.fab}
                   onPress={() =>navigation.navigate('AddExpense')}
                 />
 
+                 */}
+              
+              
+                 <FAB.Group
+                   open={open}
+                   style={styles.fab}
+                   icon={open ? 'calendar-today' : 'plus'}
+                  //  visible= { (route.name === 'AddExpense'  ||  route.name==='EventExpense')? false:true}
+                   actions={[
+                      {
+                         icon: 'plus',
+                         label:'Add Expense',
+                         onPress: ()=>navigation.navigate('AddExpense'),
+                      },
+                      {
+                        icon:'star',
+                        label: 'Event',
+                        onPress:  ()=>navigation.navigate('EventExpense'),
+                      },
+                       
+                   ]}
+                   onStateChange={onStateChange}
+                   onPress={() => {
+                     if (open) {
+                       // do something if the speed dial is open
+                     }
+                   }}
+                 />
+              
+                
     </View>
   )
 }
@@ -120,8 +160,8 @@ const styles=StyleSheet.create({
   },
   fab:{
     position: 'absolute',
-    margin: 16,
+    margin: 0,
     right: 0,
-    bottom: 0,
+    bottom: 50,
   }
 })
