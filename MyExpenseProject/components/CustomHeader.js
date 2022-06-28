@@ -8,11 +8,14 @@ const CustomHeader = ({title}) => {
   return (
     <View style={styles.container}>
       <View style={styles.main_container}>
-        <Image
-          style={styles.logo}
-          resizeMode="stretch"
-          source={require('../assets/MyExpense1.png')}
-        />
+         {/**
+            <Image
+              style={styles.logo}
+              resizeMode="stretch"
+              source={require('../assets/MyExpense1.png')}
+            />
+         
+        */}
         <Text style={styles.text}>MyExpense</Text>
       </View>
       <View style={styles.profile_container}>
@@ -29,7 +32,8 @@ const styles = StyleSheet.create({
   container: {
     // height :55,
     height: 'auto',
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
+    backgroundColor:'whitesmoke',
     marginBottom: 15,
     flexDirection: 'row',
     //  padding:10,
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: 5,
+    padding: 15,
   },
 
   logo: {
