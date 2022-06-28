@@ -6,7 +6,7 @@ import EventExpense from '../modules/home module/EventExpense';
 import {createStackNavigator, Header} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
-const HomeStack = () => {
+const HomeStack = ({navigation, route}) => {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
@@ -16,7 +16,7 @@ const HomeStack = () => {
         name="HomeScreen"
         component={HomeSreen}
       />
-      <Stack.Screen name="AddExpense" component={AddExpense} />
+      <Stack.Screen  name="AddExpense" component={AddExpense} />
       <Stack.Screen name="EventExpense" component={EventExpense} />
     </Stack.Navigator>
   );
