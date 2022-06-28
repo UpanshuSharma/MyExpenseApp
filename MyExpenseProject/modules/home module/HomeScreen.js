@@ -162,6 +162,6 @@ const styles=StyleSheet.create({
     position: 'absolute',
     margin: 0,
     right: 0,
-    bottom: 50,
+    bottom: 10,
   }
 })
