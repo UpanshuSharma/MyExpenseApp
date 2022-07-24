@@ -7,9 +7,8 @@ import date from '../../utils/DateTime';
 
 
 
+
 const HomeSreen = ({navigation}) => {
-
-
 /*......................*/
   const [state, setState] = React.useState({ open: false });
   const onStateChange = ({ open }) => setState({ open });
@@ -100,10 +99,10 @@ const HomeSreen = ({navigation}) => {
     <View style={styles.main}>
               <Agenda
                   items={items}
-                  loadItemsForMonth={loadItems}
+                  // loadItemsForMonth={loadItems}
                   // selected={new Date().toDateString()}
                   selected={date}
-                   renderItem={renderItem}
+                  //  renderItem={renderItem}
                   // onDayPress={(day)=>console.log("Day Press : ",day)}
                   pastScrollRange={3}
                   futureScrollRange={1}
@@ -162,6 +161,6 @@ const styles=StyleSheet.create({
     position: 'absolute',
     margin: 0,
     right: 0,
-    bottom: 10,
+    bottom: 0,
   }
 })
