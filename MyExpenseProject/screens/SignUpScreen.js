@@ -18,8 +18,9 @@ const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
-
-
+  const [userName,setUsername]=useState();
+ 
+  const {register} = useContext(AuthContext);
 
   
 
@@ -31,15 +32,15 @@ const SignUpScreen = ({navigation}) => {
         <View style={styles.container}>
           <Text style={styles.text}>Create an account</Text>
 
-         {/** <FormInput
-            labelValue={username}
+         <FormInput
+            labelValue={userName}
             onChangeText={userName => setUsername(userName)}
             placeholderText="User Name"
             iconType="user"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
-          /> */}
+          /> 
 
           <FormInput
             labelValue={email}
@@ -69,7 +70,7 @@ const SignUpScreen = ({navigation}) => {
 
           <FormButton
             title="Sign Up"
-            onPress={() => register(email, password)}
+            onPress={() => register(userName,email, password)}
           />
 
           <View style={styles.textPrivate}>
