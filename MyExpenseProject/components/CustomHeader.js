@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, Image} from 'react-native';
-import React from 'react';
+import React,{useContext} from 'react';
 import {Avatar} from 'react-native-paper';
 
 // import MenuComponent from './MenuComponent';
