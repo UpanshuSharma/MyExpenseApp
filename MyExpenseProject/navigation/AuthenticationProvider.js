@@ -15,7 +15,10 @@ export const AuthContext=createContext();
                   setUser,
                   login: async (email, password)=>{
                           try {
-                              await auth().signInWithEmailAndPassword(email,password) 
+                             const logged_user= await auth().signInWithEmailAndPassword(email,password) 
+                               setUser(logged_user);
+                               console.log("Logged User: ",logged_user)
+                                 
                           } catch (error) {
                                  console.log("Error  at login (Auth Provider.js) : ",error);
                           }
@@ -31,9 +34,14 @@ export const AuthContext=createContext();
                                       console.log("Error in Google login at AuthProvider:  ", error);
                            }
                   },
-                  register : async (email,password)=>{
+                  register : async (username,email,password)=>{
                       try {
-                          await auth().createUserWithEmailAndPassword(email,password);
+                          await auth().createUserWithEmailAndPassword(email,password)
+                          .then((res)=>{
+                              res.user.updateProfile({
+                                displayName:username
+                              })
+                          })
                       } catch (error) {
                         console.log("Error  at register (Auth Provider.js) : ",error);
                       }
